@@ -1,4 +1,4 @@
-const key = API_KEY;
+const key = "3Y2r12nAjYGlxuK4lMpwHwC08qFgd0H3";
 
 const getWeather = async id => {
   const base = "http://dataservice.accuweather.com/currentconditions/v1/";
@@ -52,6 +52,18 @@ async function weatherForm(e) {
 
   updateCity(city)
     .then(data => {
+      document.getElementById("city-name").innerText =
+        data.cityDetails.LocalizedName;
+      document.getElementById("temp").innerHTML = `
+        ${data.weather.Temperature.Metric.Value} &#8451;`;
+      document.getElementById("weather-text").innerText =
+        data.weather.WeatherText;
+
+      const getImage =
+        data.weather.IsDayTime == false ? "img/night.jpg" : "img/day.jpg";
+      document.getElementById("image").src = getImage;
+      data.weather.WeatherText;
+
       console.log(data);
     })
     .catch(err => {

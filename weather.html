@@ -17,35 +17,32 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-md-4 mx-auto">
-          <div class="card shadow">
-            <div class="card-body">
-              <h3>Get movies</h3>
-              <hr />
+          <h1 class="text-center">ClustWeather</h1>
+          <div class="py-3">
 
-              <form method="get" id="get-weather">
-                <div class="mb-2">
-                  <label for="city">City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    class="form-control"
-                    id="city"
-                  />
-               
-                <button type="submit" name="submit" class="btn btn-success mt-2">
-                  Get Weather
-                </button>
-              </form>
+            <form method="get" id="get-weather">
+              <div class="mb-2">
+                <label for="city" class="text-muted">Enter a location for weather information</label>
+                <input
+                  type="text"
+                  name="city"
+                  class="form-control"
+                  id="city"
+                />
+            </form>
+          </div>
+          <div class="card shadow">
+            <img src="" class="card-img-top h-25" alt="img" id="image">
+            <div class="card-body text-center">
+            <p class="card-title fs-1" id="city-name">CITY NAME</p>
+              <p class="card-subtitle text-muted">WEATHER CONDITION</>
+              <p class="card-text fs-3 mb-0" id="temp">TEMP &#176;C</p>
+              <small class="text-center text-muted" id="weather-text">b</small>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <section class="py-3">
-      <div class="container">
-        <div class="row" id="movies"></div>
-      </div>
-    </section>
     <script src="forecast.js"></script>
   </body>
 </html>
