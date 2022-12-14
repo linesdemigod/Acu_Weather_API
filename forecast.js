@@ -62,7 +62,9 @@ async function weatherForm(e) {
       const getImage =
         data.weather.IsDayTime == false ? "img/night.jpg" : "img/day.jpg";
       document.getElementById("image").src = getImage;
-      data.weather.WeatherText;
+
+      document.getElementById("country").innerText =
+        data.cityDetails.Country.EnglishName;
 
       console.log(data);
     })
