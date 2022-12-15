@@ -1,16 +1,17 @@
 const key = "3Y2r12nAjYGlxuK4lMpwHwC08qFgd0H3";
 
+//get another request by passing the city key to get the weather details
 const getWeather = async id => {
-  const base = "http://dataservice.accuweather.com/currentconditions/v1/";
-  const query = `${id}?apikey=${key}`;
+  const base = `http://dataservice.accuweather.com/currentconditions/v1/`;
+  const param = `${id}?apikey=${key}`;
 
-  const response = await axios.get(base + query);
+  const response = await axios.get(base + param);
   const data = await response.data;
 
   return data[0];
 };
 
-//make request to get the ciyt
+//make request to get the location details
 const getCity = async city => {
   const config = {
     headers: {
@@ -32,24 +33,29 @@ const getCity = async city => {
   return data[0];
 };
 
-// function
-
+//
 const updateCity = async city => {
-  const cityDetails = await getCity(city);
-  const weather = await getWeather(cityDetails.Key);
+  const cityDetails = await getCity(city); //get the city details by passing the name of the location
+  const weather = await getWeather(cityDetails.Key); //get the weather details by passing the location key from the cityDetails
 
+  //return them as object
   return {
     cityDetails: cityDetails,
     weather: weather,
   };
 };
+
+//get the form
 const getWeatherForm = document.getElementById("get-weather");
 
 async function weatherForm(e) {
   e.preventDefault();
-  var city = document.getElementById("city").value.trim();
-  getWeatherForm.reset();
 
+  //get the value of the input in the form
+  var city = document.getElementById("city").value.trim();
+  getWeatherForm.reset(); //reset the form
+
+  //get the necessary values and put it to the DOM
   updateCity(city)
     .then(data => {
       document.getElementById("city-name").innerText =

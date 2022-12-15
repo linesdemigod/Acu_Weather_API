@@ -13,10 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather</title>
   </head>
-  <body>
+  <body style="background-color: #f3f3f3;">
     <div class="container py-5">
       <div class="row">
-        <div class="col-md-4 mx-auto">
+        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mx-auto">
           <h1 class="text-center">ClustWeather</h1>
           <div class="py-3">
 
@@ -31,14 +31,17 @@
                 />
             </form>
           </div>
-          <div class="card shadow">
-            <img src="" class="card-img-top h-25" alt="img" id="image">
-            <div class="card-body text-center">
-            <p class="card-title fs-1 mb-0" id="city-name">CITY NAME</p>
-            <small class="text-muted" id="country"></small>
-              <p class="card-subtitle text-muted">WEATHER CONDITION</>
-              <p class="card-text fs-3 mb-0" id="temp">TEMP &#176;C</p>
-              <small class="text-center text-muted" id="weather-text"></small>
+          <div class="py-3">
+
+            <div class="card shadow position-relative">
+              <img src="img/day.jpg" class="position-absolute img-card-top rounded-circle top-50 start-0 translate-middle shadow" alt="img" id="image">
+              <div class="card-body text-center">
+              <p class=" fs-1 mb-0" id="city-name">CITY NAME</p>
+              <p class="text-muted" id="country"></p>
+                <p class="card-subtitle text-muted">WEATHER CONDITION</>
+                <p class="card-text fs-3 mb-0" id="temp">TEMP &#176;C</p>
+                <small class="text-center text-muted" id="weather-text"></small>
+              </div>
             </div>
           </div>
         </div>
