@@ -1,4 +1,4 @@
-const key = "3Y2r12nAjYGlxuK4lMpwHwC08qFgd0H3";
+const key = "Yor API KEy";
 
 //get another request by passing the city key to get the weather details
 const getWeather = async id => {
